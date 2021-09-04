@@ -1,14 +1,11 @@
 const express = require('express');
 const app = express();
 
+const appointmentRoute = require('./routes/AppointmentRouter');
+app.use('/', appointmentRoute);
+
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('NEW');
-});
 
-app.get('/post', (req, res) => {
-  res.send('DATA');
-});
 
 app.listen(3000);
