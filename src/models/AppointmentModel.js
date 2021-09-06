@@ -9,9 +9,6 @@ const AppointmentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  date: {
-    type: Number,
-  },
 })
 
 module.exports = mongoose.model('Appointment', AppointmentSchema);
