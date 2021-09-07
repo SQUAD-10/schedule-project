@@ -5,6 +5,10 @@ const AppointmentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+  },
   place: {
     type: String,
     required: true,
