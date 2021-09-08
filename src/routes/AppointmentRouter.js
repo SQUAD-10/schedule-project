@@ -29,6 +29,7 @@ router.post('/post', async (req, res) => {
 router.get('/:email', async (req, res) => {
   const email = req.params.email;
   await Appointment.find({email: email})
+    .sort('date')
     .then(data => {
       data.length > 0 ?
       res.status(200).json(data)
