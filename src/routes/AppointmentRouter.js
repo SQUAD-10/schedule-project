@@ -6,11 +6,13 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
 //CREATE
-router.post('/', async (req, res) => {
+router.post('/post', async (req, res) => {
+  const {name, email, place, date} = req.body;
   const appointment = new Appointment({
-    name: req.body.name,
-    email: req.body.email,
-    place: req.body.place,
+    name,
+    email,
+    place,
+    date,
   });
 
   await appointment.save()
