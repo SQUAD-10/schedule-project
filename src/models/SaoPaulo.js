@@ -12,7 +12,7 @@ const AppointmentSchema = new mongoose.Schema({
   date: {
     type: String,
     required: true,
-  },
+  }
 })
 
 module.exports = mongoose.model('SaoPaulo', AppointmentSchema);
