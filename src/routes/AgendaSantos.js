@@ -16,7 +16,7 @@ router.post('/post', (req, res) => {
 
   Santos.find({date: date})
     .then(data => {
-      data.length < 3 ?  //LIMITE DE 40 PESSOAS EM SANTOS
+      data.length < 40 ?  //LIMITE DE 40 PESSOAS EM SANTOS
       appointment.save()
         .then(data => {
           res.status(200).json('Agendamento realizado com sucesso.');
