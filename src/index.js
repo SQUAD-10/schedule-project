@@ -1,14 +1,16 @@
 const express = require('express');
 const app = express();
+const cors = require('cors')
+require('./database/index');
+require('dotenv/config');
 
-app.use(express.json());
+app.use(cors());
+const agendaSaoPaulo = require('./routes/AgendaSaoPaulo');
+const agendaSantos = require('./routes/AgendaSantos');
 
-app.get('/', (req, res) => {
-  res.send('NEW');
+app.use('/sao-paulo', agendaSaoPaulo);
+app.use('/santos', agendaSantos);
+
+app.listen(process.env.PORT || process.env.LOCAL_PATH, function () {
+  console.log('Server is running')
 });
-
-app.get('/post', (req, res) => {
-  res.send('DATA');
-});
-
-app.listen(3000);
