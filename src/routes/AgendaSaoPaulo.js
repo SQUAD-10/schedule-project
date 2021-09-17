@@ -16,7 +16,7 @@ router.post('/post', (req, res) => {
 
   SaoPaulo.find({date: date})
     .then(data => {
-      data.length < 3 ?  //LIMITE DE 240 PESSOAS EM SP
+      data.length < 240 ?  //LIMITE DE 240 PESSOAS EM SP
       appointment.save()
         .then(data => {
           res.status(200).json('Agendamento realizado com sucesso.');
